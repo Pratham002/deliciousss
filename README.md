@@ -1,5 +1,8 @@
+Website Link : https://clever-pithivier-0c6daa.netlify.app/
+
+A react based website which fetches different cuisines or you can search one and read the details such as instructions and ingredients.
+
 # Getting Started with Create React App
-# It can be viewed at : https://clever-pithivier-0c6daa.netlify.app/
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
