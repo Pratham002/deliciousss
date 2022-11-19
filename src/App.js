@@ -1,15 +1,13 @@
 import Navbar from "./components/Navbar"
-import { BrowserRouter } from "react-router-dom"
+import { BrowserRouter, Link } from "react-router-dom"
 import Pages from "./pages/Pages"
 import Search from "./components/Search"
-
 import styled from "styled-components"
-import { Link } from "react-router-dom"
 import { GiKnifeFork } from "react-icons/gi"
 
 function App() {
   return (
-    <div className="App">
+    <AppWrapper>
       <BrowserRouter>
         <Nav>
           <GiKnifeFork />
@@ -19,9 +17,19 @@ function App() {
         <Navbar />
         <Pages />
       </BrowserRouter>
-    </div>
+    </AppWrapper>
   )
 }
+
+const AppWrapper = styled.div`
+  border: 2px solid black;
+  margin: 0 15%;
+  @media (max-width: 991px) {
+    border: 2px solid red;
+    padding: 0;
+    margin: 0;
+  }
+`
 
 const Logo = styled(Link)`
   text-decoration: none;
@@ -35,6 +43,7 @@ const Nav = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  border: 1px solid red;
   svg {
     font-size: 2rem;
   }

@@ -19,7 +19,7 @@ function Veggie() {
           : null
 
       if (check) {
-        setVeggie(JSON.parse(check))
+        setVeggie(check)
       } else {
         const url = `https://api.spoonacular.com/recipes/random?number=15&apiKey=${process.env.REACT_APP_API_KEY}&tags=vegetarian`
         const res = await fetch(url)
