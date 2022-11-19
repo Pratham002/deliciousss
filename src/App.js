@@ -1,11 +1,11 @@
-import Navbar from "./components/Navbar";
-import {BrowserRouter} from "react-router-dom";
-import Pages from "./pages/Pages";
-import Search from "./components/Search";
-// for Logo
-import styled from "styled-components";
-import { Link } from "react-router-dom";
-import {GiKnifeFork} from "react-icons/gi";
+import Navbar from "./components/Navbar"
+import { BrowserRouter } from "react-router-dom"
+import Pages from "./pages/Pages"
+import Search from "./components/Search"
+
+import styled from "styled-components"
+import { Link } from "react-router-dom"
+import { GiKnifeFork } from "react-icons/gi"
 
 function App() {
   return (
@@ -20,15 +20,15 @@ function App() {
         <Pages />
       </BrowserRouter>
     </div>
-  );
+  )
 }
 
 const Logo = styled(Link)`
   text-decoration: none;
   font-size: 1.5rem;
   font-weight: 400;
-  font-family: 'Lobster Two', cursive;
-`;
+  font-family: "Lobster Two", cursive;
+`
 
 const Nav = styled.div`
   padding: 2rem 0rem;
@@ -38,6 +38,6 @@ const Nav = styled.div`
   svg {
     font-size: 2rem;
   }
-`;
+`
 
-export default App;
+export default App
