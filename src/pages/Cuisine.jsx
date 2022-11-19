@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import styled from "styled-components"
 import { Link, useParams } from "react-router-dom"
+import { apiPrefix } from "../constants"
 
 function Cuisine() {
   const [cuisine, setCuisine] = useState([])
@@ -8,7 +9,7 @@ function Cuisine() {
 
   const getCuisine = async (name) => {
     try {
-      const url = `https://api.spoonacular.com/recipes/complexSearch?number=15&apiKey=${process.env.REACT_APP_API_KEY}&cuisine=${name}`
+      const url = `${apiPrefix}/complexSearch?number=15&apiKey=${process.env.REACT_APP_API_KEY}&cuisine=${name}`
       const res = await fetch(url)
       const data = await res.json()
       setCuisine(data.results)

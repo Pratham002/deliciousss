@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import { Link, useParams } from "react-router-dom"
+import { apiPrefix } from "../constants"
 
 function Searched() {
   const [searched, setSearched] = useState([])
@@ -8,7 +9,7 @@ function Searched() {
 
   const getSearched = async (name) => {
     try {
-      const url = `https://api.spoonacular.com/recipes/complexSearch?number=9&apiKey=${process.env.REACT_APP_API_KEY}&query=${name}`
+      const url = `${apiPrefix}/complexSearch?number=9&apiKey=${process.env.REACT_APP_API_KEY}&query=${name}`
       const res = await fetch(url)
       const data = await res.json()
       setSearched(data.results)

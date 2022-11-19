@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { Splide, SplideSlide } from "@splidejs/react-splide"
 import "@splidejs/splide/dist/css/splide.min.css"
 import { Link } from "react-router-dom"
+import { apiPrefix } from "../constants"
 
 function Popular() {
   const [dishes, setDishes] = useState([])
@@ -21,7 +22,7 @@ function Popular() {
       if (check) {
         setDishes(check)
       } else {
-        const url = `https://api.spoonacular.com/recipes/random?number=15&apiKey=${process.env.REACT_APP_API_KEY}`
+        const url = `${apiPrefix}/random?number=15&apiKey=${process.env.REACT_APP_API_KEY}`
         const res = await fetch(url)
         const data = await res.json()
 

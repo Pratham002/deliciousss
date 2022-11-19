@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import { useParams } from "react-router-dom"
+import { apiPrefix } from "../constants"
 
 function Recipe() {
   let params = useParams()
@@ -10,7 +11,7 @@ function Recipe() {
 
   const fetchDetails = async () => {
     try {
-      const url = `https://api.spoonacular.com/recipes/${params.name}/information?apiKey=${process.env.REACT_APP_API_KEY}`
+      const url = `${apiPrefix}/${params.name}/information?apiKey=${process.env.REACT_APP_API_KEY}`
       const res = await fetch(url)
       const data = await res.json()
       setDetails(data)
@@ -26,6 +27,7 @@ function Recipe() {
 
   useEffect(() => {
     fetchDetails()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [params.name])
 
   return (
