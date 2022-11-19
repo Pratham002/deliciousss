@@ -22,12 +22,13 @@ function App() {
 }
 
 const AppWrapper = styled.div`
-  border: 2px solid black;
   margin: 0 15%;
   @media (max-width: 991px) {
-    border: 2px solid red;
     padding: 0;
-    margin: 0;
+    margin: 0 7%;
+  }
+  @media (max-width: 767px) {
+    margin: 0 2%;
   }
 `
 
@@ -36,6 +37,10 @@ const Logo = styled(Link)`
   font-size: 1.5rem;
   font-weight: 400;
   font-family: "Lobster Two", cursive;
+  @media (max-width: 991px) {
+    font-size: 2.5rem;
+    font-weight: 500;
+  }
 `
 
 const Nav = styled.div`
@@ -43,9 +48,11 @@ const Nav = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  border: 1px solid red;
   svg {
     font-size: 2rem;
+  }
+  @media (max-width: 767px) {
+    justify-content: center;
   }
 `
 

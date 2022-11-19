@@ -14,13 +14,13 @@ function Veggie() {
 
   const getVeggie = async () => {
     try {
-      const check =
+      const dataPresent =
         localStorage.getItem("veggie") !== undefined
           ? JSON.parse(localStorage.getItem("veggie"))
           : null
 
-      if (check) {
-        setVeggie(check)
+      if (dataPresent) {
+        setVeggie(dataPresent)
       } else {
         const url = `${apiPrefix}/random?number=15&apiKey=${process.env.REACT_APP_API_KEY}&tags=vegetarian`
         const res = await fetch(url)

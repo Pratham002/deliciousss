@@ -14,13 +14,13 @@ function Popular() {
 
   const getPopular = async () => {
     try {
-      const check =
+      const dataPresent =
         localStorage.getItem("dishes") !== undefined
           ? JSON.parse(localStorage.getItem("dishes"))
           : null
 
-      if (check) {
-        setDishes(check)
+      if (dataPresent) {
+        setDishes(dataPresent)
       } else {
         const url = `${apiPrefix}/random?number=15&apiKey=${process.env.REACT_APP_API_KEY}`
         const res = await fetch(url)
