@@ -13,7 +13,10 @@ function Veggie() {
 
   const getVeggie = async () => {
     try {
-      const check = localStorage.getItem("veggie")
+      const check =
+        localStorage.getItem("veggie") !== undefined
+          ? JSON.parse(localStorage.getItem("veggie"))
+          : null
 
       if (check) {
         setVeggie(JSON.parse(check))

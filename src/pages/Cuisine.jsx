@@ -7,10 +7,14 @@ function Cuisine() {
   let params = useParams()
 
   const getCuisine = async (name) => {
-    const url = `https://api.spoonacular.com/recipes/complexSearch?number=15&apiKey=${process.env.REACT_APP_API_KEY}&cuisine=${name}`
-    const res = await fetch(url)
-    const data = await res.json()
-    setCuisine(data.results)
+    try {
+      const url = `https://api.spoonacular.com/recipes/complexSearch?number=15&apiKey=${process.env.REACT_APP_API_KEY}&cuisine=${name}`
+      const res = await fetch(url)
+      const data = await res.json()
+      setCuisine(data.results)
+    } catch (error) {
+      console.log(error)
+    }
   }
 
   useEffect(() => {

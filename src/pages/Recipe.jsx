@@ -9,14 +9,18 @@ function Recipe() {
   const [ingredients, setIngredients] = useState([])
 
   const fetchDetails = async () => {
-    const url = `https://api.spoonacular.com/recipes/${params.name}/information?apiKey=${process.env.REACT_APP_API_KEY}`
-    const res = await fetch(url)
-    const data = await res.json()
-    setDetails(data)
-    for (const ingredients of data.extendedIngredients) {
-      setIngredients((prev) => {
-        return [...prev, ingredients.original]
-      })
+    try {
+      const url = `https://api.spoonacular.com/recipes/${params.name}/information?apiKey=${process.env.REACT_APP_API_KEY}`
+      const res = await fetch(url)
+      const data = await res.json()
+      setDetails(data)
+      for (const ingredients of data.extendedIngredients) {
+        setIngredients((prev) => {
+          return [...prev, ingredients.original]
+        })
+      }
+    } catch (error) {
+      console.log(error)
     }
   }
 
