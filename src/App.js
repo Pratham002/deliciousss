@@ -22,7 +22,7 @@ function App() {
 }
 
 const AppWrapper = styled.div`
-  margin: 0 15%;
+  margin: 0 10%;
   @media (max-width: 991px) {
     padding: 0;
     margin: 0 7%;

@@ -36,7 +36,7 @@ const FormStyle = styled.form`
   }
   input {
     margin: 0 auto;
-    width: 80%;
+    width: 70%;
     color: white;
     border: none;
     outline: none;
@@ -48,7 +48,7 @@ const FormStyle = styled.form`
   svg {
     position: absolute;
     top: 50%;
-    left: 10%;
+    left: 15%;
     transform: translate(100%, -50%);
     color: white;
   }

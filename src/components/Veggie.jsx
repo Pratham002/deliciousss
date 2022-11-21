@@ -42,6 +42,11 @@ function Veggie() {
           rewind: true,
           autoplay: true,
           perPage: 3,
+          breakpoints: {
+            991: {
+              perPage: 2,
+            },
+          },
           gap: "2rem",
           pagination: false,
           type: "loop",

@@ -43,6 +43,14 @@ function Popular() {
           rewindSpeed: 500,
           autoplay: true,
           perPage: 4,
+          breakpoints: {
+            991: {
+              perPage: 3,
+            },
+            640: {
+              perPage: 2,
+            },
+          },
           gap: "0.5rem",
           pagination: false,
           type: "loop",
